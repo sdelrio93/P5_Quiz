@@ -3,6 +3,7 @@ var router = express.Router();
 
 const Sequelize=require("sequelize");
 const models=require("../models");
+const quizController = require("../controllers/quiz");
 
 
 /* GET home page. */
@@ -16,13 +17,7 @@ router.get('/credits', function(req, res, next) {
 });
 
 // Get controla quizzes
-router.get('/quizzes', (req, res, next) => {
-    models.quiz.findAll()
-    .then(quizzes => {
-        res.render("quizzes", {quizzes})
-    })
-    .catch(error => next(error));
-    }
-);
+router.get("/quizzes", quizController.index);
+router.get("/quizzes/:quizId(\\d+)", quizController.show);
 
 module.exports = router;
