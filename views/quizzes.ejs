@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Quizzes</title>
+    <link rel='stylesheet' href='/stylesheets/style/css'/>
+</head>
+<body>
+<h1> Lista de quizzes</h1>
+<a href="/">Inicio</a>
+<a href="/credits">Creditos</a>
+
+<u1>
+    <% for (let i in quizzes) {%>
+    <% const quiz = quizzes[i];%>
+    <li>
+        <%= quiz.question%> : <%=quiz.answer%>
+    </li>
+    <%}%>
+</u1>
+</body>
+</html>
