@@ -17,7 +17,6 @@ router.get('/credits', function(req, res, next) {
 });
 
 // Get controla quizzes
-router.get("/quizzes", quizController.index);
-router.get("/quizzes/:quizId(\\d+)", quizController.show);
+router.get('/quizzes', quizController.index);
 
 module.exports = router;
